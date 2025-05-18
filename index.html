@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юридическая компания «Агон»</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white font-roboto text-gray-800">
+    <!-- Header -->
+    <header id="header" class="bg-transparent text-white py-4 fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <img src="images/logo.png" alt="Логотип Агон" class="h-12 animate-logo">
+            <!-- Hamburger Icon for Mobile -->
+            <button id="menu-toggle" class="md:hidden text-yellow-400 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Navigation for Desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-center">
+                    <li><a href="#about" class="text-yellow-400 hover:text-yellow-400 transition-colors">О компании</a></li>
+                    <li><a href="#services" class="text-yellow-400 hover:text-yellow-400 transition-colors">Услуги</a></li>
+                    <li><a href="#reviews" class="text-yellow-400 hover:text-yellow-400 transition-colors">Отзывы</a></li>
+                    <li><a href="#team" class="text-yellow-400 hover:text-yellow-400 transition-colors">Команда</a></li>
+                    <li><a href="#contacts" class="text-yellow-400 hover:text-yellow-400 transition-colors">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Sidebar (Shutter) -->
+        <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-gray-800 text-white transform -translate-x-full transition-transform duration-300 md:hidden z-50">
+            <div class="flex justify-between items-center p-4 border-b border-gray-700">
+                <img src="images/logo.png" alt="Логотип Агон" class="h-12">
+                <button id="menu-close" class="text-yellow-400 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="p-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="#about" class="text-yellow-400 hover:text-yellow-400 transition-colors">О компании</a></li>
+                    <li><a href="#services" class="text-yellow-400 hover:text-yellow-400 transition-colors">Услуги</a></li>
+                    <li><a href="#reviews" class="text-yellow-400 hover:text-yellow-400 transition-colors">Отзывы</a></li>
+                    <li><a href="#team" class="text-yellow-400 hover:text-yellow-400 transition-colors">Команда</a></li>
+                    <li><a href="#contacts" class="text-yellow-400 hover:text-yellow-400 transition-colors">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay for Mobile Menu -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- About Section (Part 1 - Styled like the photo) -->
+    <section id="about" class="pt-24 pb-16 bg-cover bg-center relative" style="background-image: url('images/background.jpg'); min-height: 80vh;">
+        <div class="container mx-auto px-4 flex flex-col items-center h-full">
+            <div class="flex justify-end w-full mb-6">
+                <div class="text-right max-w-md">
+                    <h1 class="text-5xl font-alberta font-bold text-dark-blue mb-4 animate-heading" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">Юридическая компания «Агон»</h1>
+                    <p class="text-2xl text-dark-blue mb-4" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">Требуется срочная юридическая помощь?</p>
+                    <p class="text-2xl text-dark-blue mb-4" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">Юридические услуги любой сложности</p>
+                    <p class="text-2xl text-dark-blue mb-4" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">тел. <a href="tel:+79920488804" class="underline">8 (992) 048-88-04</a></p>
+                    <p class="text-2xl text-dark-blue mb-6" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">E.mail: <a href="mailto:info@agon-law.ru" class="underline">info@agon-law.ru</a></p>
+                </div>
+            </div>
+            <div class="text-center max-w-md">
+                <p class="text-xl text-dark-blue mb-6" style="text-shadow: -1px -1px 0 #FFC107, 1px -1px 0 #FFC107, -1px 1px 0 #FFC107, 1px 1px 0 #FFC107;">Бесплатная консультация очно или онлайн</p>
+                <a href="consultation.html" class="bg-blue-500 text-white px-8 py-3 rounded hover:bg-blue-600 transition-colors border-2 border-blue-500">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+    <hr class="border-yellow-400 my-0">
+
+    <!-- About Section (Part 2 - Separate block without background) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <p class="text-2xl font-alberta text-dark-blue mb-6">Мы - надежная юридическая компания "Агон" с грамотным профессиональным составом юристов</p>
+            <p class="text-lg text-gray-800 mb-6">В компании "Агон" работают специалисты своего направления. Стратегию ведения Вашего дела разрабатывают практикующие эксперты в области права, бывшие сотрудники судебных, правоохранительных органов, надзорных органов, прокуратуры и федеральной налоговой службы, которые имеют огромный опыт в принятии системных решений и комплексном подходе к решению правовых вопросов. Мы не стоим на месте, постоянно совершенствуемся и развиваемся, изучая новые границы и горизонты правового "поля" применяя их на практике. Мы помогаем в различных ситуациях, даже когда другие просто разводят руками.</p>
+            <p class="text-lg text-gray-800">Наши преимущества:<br>- Готовы к решению правовых вопросов любой сложности<br>- Применяем нестандартный подход даже к стандартным проблемам<br>- Всегда разрабатываем стратегию ведения дела с разъяснением доверителю всех вариантов решения поставленных задач<br>- Наша цель: "Главное победа, а не участие"</p>
+        </div>
+    </section>
+    <hr class="border-yellow-400 my-0">
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-alberta font-bold text-dark-blue text-center mb-12 animate-heading">Услуги</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Юридическая помощь по наследственным делам</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Юридическое сопровождение доверителя до вступления в наследство, с соблюдением сроков и очередностей наследников. Оспаривание наследства. Досудебное и судебное урегулирование вопросов связанных с получением наследства, разъяснение прав и обязанностей наследников в том числе в случае наличия долгов для взыскания из наследуемой массы. Признание завещаний недействительными.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Юридическое абонентское обслуживание</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Наша компания предлагает полное юридическое обслуживание как частных предпринимателей, так и крупных организаций. Ведение бизнеса связано с постоянным предоставлением отчетности в различные надзорные органы, взаимодействием с контролирующими инстанциями. Аутсорсинг поможет Вам не изучать дополнительно правовые основы и не загружать себя специфическими процедурами, в которых просто сможет помочь компетентный юрист компании "Агон".</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Налоговые споры</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Юридические споры возникающие между налогоплательщиками и налоговыми органами, характеризуются тем, что интересы государства по сбору налогов не совпадают с интересами налогоплательщиков. Предметом споров являются исчисление и уплата налогов и сборов. Мы проводим анализ, аудит и предлагаем несколько вариантов решения возникшего вопроса в досудебном порядке, в случае необходимости в суде.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Юридическая помощь при ДТП, споры со страховой</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Юридическое сопровождение от оформления ДТП, до получения страховой выплаты. Взыскание страхового возмещения в досудебном и судебном порядке со страховой компании, виновника ДТП, СТО после ДТП. Муниципальных служб в случае некачественного дорожного покрытия, повлекшего ущерб транспортному средству. Возмещение вреда здоровью при ДТП.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Личный юрист</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Это Ваш юрист по любым правовым вопросам возникающим в повседневной жизни, он разъяснит особенности законодательства, проконсультирует, посоветует. В случае необходимости Ваш личный юрист представит и защитит Ваши интересы в различных инстанциях.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Земельные споры</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Предметом земельного спора может являться любая конфликтная ситуация, связанная с земельным участком, его границами и размерами. Разъясним права и обязанности сторон, докажем права на землю доверителя с соблюдением установленной процессуальной процедуры.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Открытие и ликвидация предприятий и ИП</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Подготовим полный пакет документов, уставных документов, протоколов, решений, заявлений. Разработаем оптимальную систему налогообложения в соответствии с ОКВЭД независимо от формы собственности организации.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Банкротство юридических и физических лиц</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Обеспечим юридическое сопровождение и контроль процедуры банкротства любой сложности. Сохраним имущество, спишем долги. Вступаем в процесс банкротства юридического лица на любой стадии, защищаем интересы своего доверителя должника или кредитора.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Семейные споры</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Отдельная категория гражданско-правовых споров, которые возникают между членами одной семьи - близкими родственниками, не обязательно состоящими в браке. Судебные разногласия между супругами. Семейные споры, вытекающие из категорий отношений родителей и детей. И другие категории семейных споров, регламентируемые семейным правом.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Уголовное право</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Уголовное дело – это специальный юридический документ, который формируется органами правосудия для рассмотрения и разрешения уголовных преступлений. Ознакомимся с Вашим делом и материалами следствия, разработаем стратегию и тактику защиты, участвуем в процессе расследования и суде до вынесения приговора.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Юридическое сопровождение сделок и судебных споров</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Правовая услуга, гарантирующая грамотное ведение бизнеса, направленная на анализ условий договора с контрагентами, выявление возможных правовых рисков для предотвращения конфликтных ситуаций с надзорными органами. Мы сопровождаем различные сделки малого, среднего и крупного бизнеса.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Аграрный, земельный спор</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Правовые формы регулирования, защита этих правоотношений. Выделение земельного пая из общей долевой собственности объекта сельскохозяйственного назначения. Организация процесса от запроса в Администрации, проверке в кадастровой палате, межевания, получения кадастрового паспорта и оформления в собственность доверителя.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Трудовые споры</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Трудовые споры - это конфликты и разногласия, возникающие между работниками и работодателями по вопросам незаконного применения трудового законодательства, невыполнения условий трудового договора и других нормативных актов.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Правовая защита бизнеса</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Разработаем план мероприятий, нацеленных на пресечение, предотвращение и смягчение влияния внешних угроз. Проведем анализ бизнес-процессов, минимизируем риски, защитим от нарушения прав. В случае предстоящей налоговой проверки разъясним права и обязанности сторон.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Военный юрист</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Правовая услуга, специализирующаяся на помощи военнослужащим. Сопровождение ВВК. Незаконное увольнение с военной службы. Помощь участникам СВО, мобилизованным. Получение выплат. Отсрочка от службы в Армии РФ.</p>
+                </div>
+                <div class="service-card border-2 border-blue-500 rounded p-4 cursor-pointer bg-white relative">
+                    <h3 class="text-lg font-bold text-dark-blue text-left">Исполнительное производство, взаимодействие с ФССП</h3>
+                    <svg class="arrow-icon w-[20px] h-[20px] text-yellow-400 transition-transform absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <p class="service-details hidden text-gray-800 mt-2">Отменим судебный приказ, заочное решение. В досудебном и судебном порядке защитим права доверителя в части незаконности взыскания по исполнительному производству. Окончим судебное производство, в случае невозможности, уменьшим до минимального размера взыскания.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="border-yellow-400 my-0">
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <a href="reviews.html" class="border-2 border-blue-500 text-dark-blue bg-white px-8 py-3 rounded hover:bg-blue-500 hover:text-white transition-colors">Посмотреть примеры</a>
+        </div>
+    </section>
+    <hr class="border-yellow-400 my-0">
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-alberta font-bold text-dark-blue text-center mb-12 animate-heading">Наша команда</h2>
+            <div class="flex flex-col md:flex-row justify-center space-y-12 md:space-y-0 md:space-x-24">
+                <div class="text-center max-w-xs">
+                    <img src="images/fhoto4.jpg" alt="Денис Мащенко" class="w-32 h-32 rounded-full border-2 border-yellow-400 mx-auto mb-4">
+                    <h3 class="text-lg font-bold text-dark-blue">Денис Мащенко</h3>
+                    <p class="text-gray-800">Основатель компании, юрист с опытом с 2009 года</p>
+                </div>
+                <div class="text-center max-w-xs">
+                    <img src="images/fhoto5.jpg" alt="Нина Бершак" class="w-32 h-32 rounded-full border-2 border-yellow-400 mx-auto mb-4">
+                    <h3 class="text-lg font-bold text-dark-blue">Нина Бершак</h3>
+                    <p class="text-gray-800">Генеральный директор компании</p>
+                </div>
+                <div class="text-center max-w-xs">
+                    <img src="images/fhoto6.jpg" alt="Елена Дадыкина" class="w-32 h-32 rounded-full border-2 border-yellow-400 mx-auto mb-4">
+                    <h3 class="text-lg font-bold text-dark-blue">Елена Дадыкина</h3>
+                    <p class="text-gray-800">Финансовый директор - специалист в области налогового права, бухгалтерии и финансовых рисках</p>
+                </div>
+            </div>
+            <p class="text-2xl text-dark-blue text-center mt-12">Наши юристы обеспечат грамотное ведение деятельности любого предприятия независимо от организационной формы. Поможем исследовать бизнес-процессы, чтобы их оптимизировать</p>
+            <p class="text-2xl font-bold text-dark-blue text-center mt-6">Главное победа, а не участие...</p>
+        </div>
+    </section>
+    <hr class="border-yellow-400 my-0">
+
+    <!-- Contacts Section -->
+    <footer id="contacts" class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-alberta font-bold mb-8 animate-heading">Оставь свои контакты ниже и мы перезвоним</h2>
+            <form id="contact-form-footer" class="max-w-md mx-auto">
+                <input type="text" name="name" placeholder="Имя" class="w-full p-3 mb-4 border-2 border-blue-500 rounded bg-gray-800 text-white" required>
+                <input type="tel" name="phone" placeholder="Телефон" class="w-full p-3 mb-4 border-2 border-blue-500 rounded bg-gray-800 text-white" required>
+                <input type="hidden" name="_replyto" value="info@agon-law.ru">
+                <button type="submit" class="bg-blue-500 text-white px-8 py-3 rounded hover:bg-blue-600 transition-colors w-full">Отправить</button>
+            </form>
+            <p class="mt-8 text-sm">г. Ростов-на-Дону, пр. Стачки, 59, офис 211</p>
+            <p class="text-sm"><a href="tel:+79185708319" class="underline">+7 (918) 570-83-19</a></p>
+            <p class="text-sm">Работаем ежедневно с 10:00 до 20:00</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

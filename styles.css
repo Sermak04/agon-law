@@ -1,0 +1,117 @@
+:root {
+    --dark-blue: #003087;
+    --yellow: #FFC107;
+    --blue: #007BFF;
+    --gray: #D7D7D7;
+    --dark-gray: #252830;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.font-alberta {
+    font-family: 'Alberta Deco', sans-serif;
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.bg-gray-800 {
+    background-color: var(--dark-gray);
+}
+
+.border-blue-500 {
+    border-color: var(--blue);
+}
+
+.bg-blue-500 {
+    background-color: var(--blue);
+}
+
+.bg-blue-600 {
+    background-color: #0056b3;
+}
+
+.border-yellow-400 {
+    border-color: var(--yellow);
+}
+
+.text-yellow-400 {
+    color: var(--yellow);
+}
+
+.bg-gray-100 {
+    background-color: var(--gray);
+}
+
+.service-card {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .arrow-icon {
+    display: block;
+}
+
+.arrow-icon {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.service-details {
+    overflow: hidden;
+    transition: height 1s linear, opacity 1s linear;
+}
+
+section {
+    scroll-margin-top: 50px;
+}
+
+@media (max-width: 640px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about h1 {
+        font-size: 2rem;
+    }
+
+    #services .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #team .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 320px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+#header {
+    background-color: rgba(37, 40, 48, 0);
+}
+
+#header.scrolled {
+    background-color: var(--dark-gray);
+}
+
+#header .hidden-logo {
+    display: none;
+}
